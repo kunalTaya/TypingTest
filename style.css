@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+:root{
+    --bgColor: #333;
+    --textPrimary: #fff;
+    --textSecondary: #666;
+    --primaryColor: #DAA520;
+
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bgColor);
+    color: var(--textPrimary);
+    font-size: 1.5rem;
+}
+main{
+    width: 80%;
+    margin: 10px auto;
+}
+h1{
+    color: var(--textPrimary)
+}
+
+
+#buttons{
+    text-align: right;
+}
+#info{
+    color: var(--primaryColor);
+
+}
+button{
+    background: rgba(255,255,255, .2);
+    border: 0;
+    color: rgba(255, 255, 255, .5);
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+div.word{
+    display: inline-block;
+    font-family: "Roboto Mono", monospace;
+    margin: 0 5px;
+}
+div#game{
+    position: relative;
+    line-height: 35px;
+    height: 110px;
+    overflow: hidden;
+    border: none;
+}
+#game:focus #words{
+    filter: blur(0);
+}
+#words{
+    filter: blur(5px);
+    color: var(--textSecondary);
+    border: none;
+}
+#focus-error{
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    margin-top: 35px;
+}
+#focus-error svg{
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+
+#game:focus #focus-error{
+    display: none;
+}
+.letter.correct{
+    color: #fff;
+}
+.letter.incorrect{
+    color: #f55;
+}
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#cursor {
+    display: none;
+    width: 2px;
+    height: 1.6rem;
+    background: var(--primaryColor);
+    position: fixed;
+    top: 260px;
+    left: 650px;
+    animation: blink 1s infinite;
+}
+
+#game:focus #cursor {
+    display: block;
+}
+
+div#game:focus{
+    outline: 0;
+}
+
+
+
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: var(--bgColor);
+    padding: 20px 10px;
+}
+
+.bar{
+    margin: 0 10px;
+}
+
+.options {
+    background-color: rgba(62, 53, 53, 0.495);
+    display: flex;
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: center;
+    border-radius: 20px;
+    gap: 10px; /* Space between child elements */
+    width: 600px;
+    margin: auto;
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+
+
+
+.option-element{
+    
+    color: var(--primaryColor);
+    font-size: 20px;
+    margin: 10px 10px;
+}
+
+
+.mode {
+    color: var(--textSecondary);
+    text-decoration: none;
+    
+}
+.white{
+    color: var(--primaryColor);
+    
+}
+.mode:hover {
+    color: white;
+    text-decoration: none; 
+}
+
+
+
+#header .bar svg{
+    width: 60px;
+    fill: var(--textSecondary);
+    vertical-align: -20px;
+    padding: 0 10px;
+    transition: fill 0.3s;
+    margin-right: -5px;
+}
+
+#header .bar svg:hover{
+    fill: #fff;
+}
+
+
+.option-element a svg{
+    margin-right: 5px;
+    fill: var(--textSecondary);
+}
+.option-element .white svg{
+    fill: var(--primaryColor);
+}
+.option-element:hover svg,
+.option-element:hover a {
+  color: var(--textPrimary); /* Change both SVG and text color on hover */
+  fill: var(--textPrimary); /* Change SVG fill color on hover */
+  
+}
+#header .space{
+    width: 500px;
+}
+
+
+
+.hidden{
+    display: block;
+}
+
+#header img{
+    width: 400px;
+    vertical-align: -40px;
+    padding: 0 10px;
+}
+
+
+#refresh{
+    text-align: center;
+    fill: var(--textSecondary);
+}
+#refresh:hover{
+    fill: var(--textPrimary);
+    cursor: pointer;
+}
+
+#game.over:hover #cursor{
+    display: none;
+}
+#game.over #cursor{
+    display: none;
+}
